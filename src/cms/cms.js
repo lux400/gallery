@@ -7,6 +7,20 @@ import BlogPostPreview from './preview-templates/BlogPostPreview';
 import VideoPostPreview from './preview-templates/VideoPostPreview';
 
 CMS.registerMediaLibrary(uploadcare);
+console.log(123123123);
+console.log(123123123);
+console.log(123123123);
+console.log(123123123);
+console.log(123123123);
+console.log(123123123);
+console.log(123123123);
+console.log(123123123);
+console.log(123123123);
+console.log(123123123);
+console.log(123123123);
+console.log(123123123);
+console.log(123123123);
+console.log(123123123);
 CMS.registerMediaLibrary(cloudinary);
 
 CMS.registerPreviewTemplate('about', AboutPagePreview);

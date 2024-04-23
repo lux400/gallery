@@ -1,22 +1,16 @@
 backend:
   name: git-gateway
   branch: main
-  commit_messages:
-    create: 'Create {{collection}} “{{slug}}”'
-    update: 'Update {{collection}} “{{slug}}”'
-    delete: 'Delete {{collection}} “{{slug}}”'
-    uploadMedia: '[skip ci] Upload “{{path}}”'
-    deleteMedia: '[skip ci] Delete “{{path}}”'
 
 media_folder: static/media
 public_folder: /media
 
-media_library:
-  name: cloudinary
-  config:
-    output_filename_only: false
-    api_key: 431876271444466
-    cloud_name: dpj6vngpr
+#media_library:
+#  name: cloudinary
+#  config:
+#    output_filename_only: false
+#    api_key: 431876271444466
+#    cloud_name: dpj6vngpr
 
 collections:
   - name: 'blog-en'
