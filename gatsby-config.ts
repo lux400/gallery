@@ -6,6 +6,7 @@ const languages = require('./src/translations/languages');
 const config: GatsbyConfig = {
   siteMetadata: {
     languages,
+    siteUrl: 'https://marynabardina.com',
     title: 'Maryna Bardina · Transformation Designer and UX Researcher',
     titleTemplate: '%s · Maryna Bardina',
     description:

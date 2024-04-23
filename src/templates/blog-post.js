@@ -54,11 +54,11 @@ BlogPostTemplate.propTypes = {
   helmet: PropTypes.object,
 };
 
-const BlogPost = ({ data , ...props}) => {
+const BlogPost = ({ data, ...props }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout {...props}  >
+    <Layout {...props}>
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
@@ -66,10 +66,7 @@ const BlogPost = ({ data , ...props}) => {
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.description}`}
-            />
+            <meta name="description" content={`${post.description}`} />
           </Helmet>
         }
         tags={post.tags}
@@ -86,3 +83,16 @@ BlogPost.propTypes = {
 };
 
 export default BlogPost;
+export const pageQuery = graphql`
+  query BlogPostByID($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        description
+      }
+    }
+  }
+`;

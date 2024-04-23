@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
+import { PosterBlock } from '@components/VideoRoll/styled';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
-import { PosterBlock } from '@components/VideoRoll/styled';
 
 export const VideoPostTemplate = ({
   content,
@@ -87,4 +87,17 @@ VideoPost.propTypes = {
 
 export default VideoPost;
 
-
+export const pageQuery = graphql`
+  query VideoPostById($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        description
+        video
+      }
+    }
+  }
+`;
