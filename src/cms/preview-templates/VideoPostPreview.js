@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { VideoPostTemplate } from 'src/templates/video-post';
+import { VideoPostTemplate } from '../../templates/video-post';
 
 const BlogPostPreview = ({ entry, widgetFor }) => {
   const tags = entry.getIn(['data', 'tags']);

@@ -1,9 +1,7 @@
-import type { GatsbyConfig } from 'gatsby';
-
 const webpackConfig = require('./webpack.config');
 const languages = require('./src/translations/languages');
 
-const config: GatsbyConfig = {
+module.exports = {
   siteMetadata: {
     languages,
     siteUrl: 'https://marynabardina.com',
@@ -36,14 +34,23 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
 
   plugins: [
-    'gatsby-plugin-netlify-cms',
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: webpackConfig.resolve,
+    },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        icon: 'src/media/icon.png',
       },
     },
     'gatsby-transformer-remark',
@@ -53,7 +60,7 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: './src/images/',
+        path: `${__dirname}/src/media`,
       },
       __key: 'images',
     },
@@ -61,15 +68,9 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: './src/pages/',
+        path: `${__dirname}/src/pages`,
       },
       __key: 'pages',
     },
-    {
-      resolve: `gatsby-plugin-alias-imports`,
-      options: webpackConfig.resolve,
-    },
   ],
 };
-
-export default config;
