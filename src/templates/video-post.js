@@ -87,17 +87,4 @@ VideoPost.propTypes = {
 
 export default VideoPost;
 
-export const pageQuery = graphql`
-  query VideoPostById($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      id
-      html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        title
-        description
-        video
-      }
-    }
-  }
-`;
+

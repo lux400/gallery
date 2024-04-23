@@ -1,0 +1,43 @@
+{
+	"parser": "babel-eslint",
+	"env": {
+		"browser": true,
+		"node": true,
+		"mocha": true
+	},
+	"extends": ["airbnb-base", "prettier"],
+	"rules": {
+		"class-methods-use-this": ["off"],
+		"comma-dangle": ["off"],
+		"func-names": 0,
+		"global-require": 0,
+		"guard-for-in": ["warn"],
+		"import/extensions": 0,
+		"import/no-extraneous-dependencies": 0,
+		"import/no-unresolved": 0,
+		"import/prefer-default-export": 0,
+		"jsx-a11y/label-has-for": 0,
+		"max-len": 0,
+		"no-console": "warn",
+		"no-plusplus": 0,
+		"no-restricted-syntax": ["warn"],
+		"no-script-url": 0,
+		"no-shadow": 0,
+		"no-undef": 0,
+		"no-underscore-dangle": ["off"],
+		"no-unused-vars": 0,
+		"object-curly-spacing": ["off"],
+		"padded-blocks": ["off"],
+		"react/jsx-closing-bracket-location": ["off"],
+		"react/jsx-no-bind": 0,
+		"react/jsx-no-target-blank": 0,
+		"react/jsx-space-before-closing": ["off"],
+		"react/no-array-index-key": 0,
+		"react/no-multi-comp": 0,
+		"react/no-unescaped-entities": 0,
+		"react/prefer-stateless-function": ["off"],
+		"react/prop-types": 0,
+		"no-template-curly-in-string": "off",
+		"arrow-body-style": ["error", "as-needed"]
+	}
+}

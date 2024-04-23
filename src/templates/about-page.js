@@ -23,14 +23,16 @@ AboutPageTemplate.propTypes = {
 };
 
 const AboutPage = ({ data, ...props }) => {
-  const { markdownRemark: post } = data;
+  console.log(data);
 
+  console.log(props);
+  const { markdownRemark: post } = data;
   return (
     <Layout {...props}>
-      <SEO title={post.frontmatter.title} />
+      <SEO title={post.title} />
       <AboutPageTemplate
         contentComponent={HTMLContent}
-        title={post.frontmatter.title}
+        title={post.title}
         content={post.html}
       />
     </Layout>
@@ -48,6 +50,7 @@ export const aboutPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
+        date(formatString: "MMMM DD, YYYY")
         title
       }
     }
