@@ -18,7 +18,6 @@
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
     "cyrillic-to-translit-js": "^3.2.1",
-    "gatsby": "^5.13.3",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
@@ -51,5 +50,8 @@
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.2.5",
     "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   }
 }
