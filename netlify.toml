@@ -4,3 +4,10 @@
   functions = "lambda"
 [build.environment]
   NODE_VERSION = "18.18.2"
+[[plugins]]
+  package = "netlify-plugin-cloudinary"
+
+  [plugins.inputs]
+  cloudName = "dpj6vngpr"
+  imagesPath = "/src/media"
+  deliveryType = "upload"
