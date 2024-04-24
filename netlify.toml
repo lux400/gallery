@@ -8,4 +8,5 @@
 
   [plugins.inputs]
   cloudName = "dpj6vngpr"
+  imagesPath = "static/media"
   deliveryType = "upload"
