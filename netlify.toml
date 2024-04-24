@@ -7,6 +7,4 @@
   package = "netlify-plugin-cloudinary"
 
   [plugins.inputs]
-  cloudName = "dpj6vngpr"
-  imagesPath = "/public/media"
   deliveryType = "upload"
