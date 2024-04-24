@@ -5,12 +5,12 @@ backend:
 media_folder: static/media
 public_folder: /media
 
-#media_library:
-#  name: cloudinary
-#  config:
-#    output_filename_only: false
-#    api_key: 431876271444466
-#    cloud_name: dpj6vngpr
+media_library:
+  name: cloudinary
+  config:
+    output_filename_only: false
+    api_key: 431876271444466
+    cloud_name: dpj6vngpr
 
 collections:
   - name: 'blog-en'
