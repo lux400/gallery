@@ -1,7 +1,6 @@
 [build]
   publish = "public"
   command = "npm run build"
-  functions = "lambda"
 [build.environment]
   NODE_VERSION = "18.18.2"
 [[plugins]]
@@ -9,5 +8,5 @@
 
   [plugins.inputs]
   cloudName = "dpj6vngpr"
-  imagesPath = "/src/media"
+  imagesPath = "/media"
   deliveryType = "upload"
