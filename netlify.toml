@@ -1,10 +1,12 @@
 [build]
   publish = "public"
   command = "npm run build"
+  functions = "lambda"
 [build.environment]
   NODE_VERSION = "18.18.2"
 [[plugins]]
   package = "netlify-plugin-cloudinary"
 
   [plugins.inputs]
+  imagesPath = "/media"
   deliveryType = "upload"
