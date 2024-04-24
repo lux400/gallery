@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
-import {Container, Row} from '@components/ui';
+import { Container, Row } from '@components/ui';
 import {
   VideoBox,
   VideosContainer,
@@ -11,7 +11,7 @@ import {
 const VideoRoll = props => {
   const { data } = props;
   console.log(data);
-  let { edges: videos } = data.allMarkdownRemark;
+  const { edges: videos } = data.allMarkdownRemark;
 
   return (
     <Container>
@@ -34,7 +34,6 @@ const VideoRoll = props => {
                       alt={video.frontmatter.title}
                       src={video.frontmatter.poster}
                     />
-
                   </PosterBlock>
                 </Link>
                 <p>{video.frontmatter.title}</p>
@@ -56,6 +55,28 @@ VideoRoll.propTypes = {
 
 export default () => (
   <StaticQuery
+    query={graphql`
+      query VideoRollQuery {
+        allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___date] }
+          filter: { frontmatter: { templateKey: { eq: "video-post" } } }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                description
+                date
+                poster
+              }
+            }
+          }
+        }
+      }
+    `}
     render={(data, count) => <VideoRoll data={data} count={count} />}
   />
 );

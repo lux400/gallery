@@ -32,7 +32,7 @@ export const BlogPostTemplate = ({
                 <h4>Tags</h4>
                 <ul className="taglist">
                   {tags.map(tag => (
-                    <li key={tag + `tag`}>
+                    <li key={`${tag}tag`}>
                       <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                     </li>
                   ))}
@@ -56,7 +56,7 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data, ...props }) => {
   const { markdownRemark: post } = data;
-
+  console.log('BLOG POST PAGE');
   return (
     <Layout {...props}>
       <BlogPostTemplate

@@ -19,6 +19,7 @@ export const VideoPostTemplate = ({
   ...props
 }) => {
   const PostContent = contentComponent || Content;
+  console.log('VIDEO');
   console.log(video);
   return (
     <section className="section">
@@ -55,7 +56,7 @@ VideoPostTemplate.propTypes = {
 
 const VideoPost = ({ data, ...props }) => {
   const { markdownRemark: post } = data;
-
+  console.log('VideoPost');
   return (
     <Layout {...props}>
       <VideoPostTemplate

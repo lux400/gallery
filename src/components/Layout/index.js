@@ -45,6 +45,7 @@ const Layout = ({ children, location }) => (
       }));
       console.log(langKey);
       console.log(messages[langKey]);
+      console.log(children);
       return (
         <IntlProvider locale={langKey} messages={messages[langKey]}>
           <ThemeProvider theme={theme}>
